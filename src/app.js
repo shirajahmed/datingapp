@@ -52,6 +52,12 @@ app.get("/admin/deleteData", (req, res) => {
 //   res.send("yoooo");
 // });
 
+app.use("/", (err, req, res, next) => {
+  if (err) {
+    res.status(500).send("eror ");
+  }
+});
+
 app.listen(3000, () => {
   console.log("ruunning success");
 });
